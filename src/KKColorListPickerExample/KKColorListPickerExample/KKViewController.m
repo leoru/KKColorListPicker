@@ -7,8 +7,11 @@
 //
 
 #import "KKViewController.h"
+#import "KKColorListViewController.h"
 
 @interface KKViewController ()
+
+- (IBAction)PresentColorList:(id)sender;
 
 @end
 
@@ -17,13 +20,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)PresentColorList:(id)sender {
+    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
+    [self presentViewController:controller animated:YES completion:nil];
+}
 @end

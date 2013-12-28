@@ -21,6 +21,16 @@
 		6A7A0817186F343D005E9FEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7A07F9186F343D005E9FEC /* UIKit.framework */; };
 		6A7A081F186F343D005E9FEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A081D186F343D005E9FEC /* InfoPlist.strings */; };
 		6A7A0821186F343D005E9FEC /* KKColorListPickerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0820186F343D005E9FEC /* KKColorListPickerExampleTests.m */; };
+		6A7A0835186F35DA005E9FEC /* KKColorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0833186F35DA005E9FEC /* KKColorListViewController.m */; };
+		6A7A0836186F35DA005E9FEC /* KKColorListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A0834186F35DA005E9FEC /* KKColorListViewController.xib */; };
+		6A7A083A186F3673005E9FEC /* KKColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0839186F3673005E9FEC /* KKColorCell.m */; };
+		6A7A083C186F369E005E9FEC /* KKColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A083B186F369E005E9FEC /* KKColorCell.xib */; };
+		6A7A0840186F3701005E9FEC /* KKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A083F186F3701005E9FEC /* KKColor.m */; };
+		6A7A0843186F394A005E9FEC /* KKColorsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0842186F394A005E9FEC /* KKColorsLoader.m */; };
+		6A7A0848186F3FA0005E9FEC /* colors_crayola.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A0846186F3FA0005E9FEC /* colors_crayola.plist */; };
+		6A7A0849186F3FA0005E9FEC /* colors_pantone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A0847186F3FA0005E9FEC /* colors_pantone.plist */; };
+		6A7A0858186F41C2005E9FEC /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0854186F41C2005E9FEC /* UIColor+CustomColors.m */; };
+		6A7A0859186F41C2005E9FEC /* UIView+KKToolKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0857186F41C2005E9FEC /* UIView+KKToolKitAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,23 @@
 		6A7A081C186F343D005E9FEC /* KKColorListPickerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KKColorListPickerExampleTests-Info.plist"; sourceTree = "<group>"; };
 		6A7A081E186F343D005E9FEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A7A0820186F343D005E9FEC /* KKColorListPickerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKColorListPickerExampleTests.m; sourceTree = "<group>"; };
+		6A7A0832186F35DA005E9FEC /* KKColorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColorListViewController.h; sourceTree = "<group>"; };
+		6A7A0833186F35DA005E9FEC /* KKColorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColorListViewController.m; sourceTree = "<group>"; };
+		6A7A0834186F35DA005E9FEC /* KKColorListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKColorListViewController.xib; sourceTree = "<group>"; };
+		6A7A0838186F3673005E9FEC /* KKColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColorCell.h; sourceTree = "<group>"; };
+		6A7A0839186F3673005E9FEC /* KKColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColorCell.m; sourceTree = "<group>"; };
+		6A7A083B186F369E005E9FEC /* KKColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKColorCell.xib; sourceTree = "<group>"; };
+		6A7A083E186F3701005E9FEC /* KKColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColor.h; sourceTree = "<group>"; };
+		6A7A083F186F3701005E9FEC /* KKColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColor.m; sourceTree = "<group>"; };
+		6A7A0841186F394A005E9FEC /* KKColorsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColorsLoader.h; sourceTree = "<group>"; };
+		6A7A0842186F394A005E9FEC /* KKColorsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColorsLoader.m; sourceTree = "<group>"; };
+		6A7A0844186F3979005E9FEC /* KKColorsSchemeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKColorsSchemeType.h; sourceTree = "<group>"; };
+		6A7A0846186F3FA0005E9FEC /* colors_crayola.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colors_crayola.plist; sourceTree = "<group>"; };
+		6A7A0847186F3FA0005E9FEC /* colors_pantone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colors_pantone.plist; sourceTree = "<group>"; };
+		6A7A0853186F41C2005E9FEC /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		6A7A0854186F41C2005E9FEC /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		6A7A0856186F41C2005E9FEC /* UIView+KKToolKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KKToolKitAdditions.h"; sourceTree = "<group>"; };
+		6A7A0857186F41C2005E9FEC /* UIView+KKToolKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KKToolKitAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +139,7 @@
 		6A7A07FB186F343D005E9FEC /* KKColorListPickerExample */ = {
 			isa = PBXGroup;
 			children = (
+				6A7A082A186F355D005E9FEC /* KKColorListPicker */,
 				6A7A0804186F343D005E9FEC /* KKAppDelegate.h */,
 				6A7A0805186F343D005E9FEC /* KKAppDelegate.m */,
 				6A7A0807186F343D005E9FEC /* Main.storyboard */,
@@ -150,6 +178,95 @@
 				6A7A081D186F343D005E9FEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A7A082A186F355D005E9FEC /* KKColorListPicker */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A084E186F4050005E9FEC /* Categories */,
+				6A7A0845186F3FA0005E9FEC /* Schemes */,
+				6A7A083D186F36F1005E9FEC /* Classes */,
+				6A7A0837186F365B005E9FEC /* Cells */,
+				6A7A082B186F355D005E9FEC /* Controllers */,
+				6A7A082C186F355D005E9FEC /* Vendor */,
+			);
+			name = KKColorListPicker;
+			path = ../../KKColorListPicker;
+			sourceTree = "<group>";
+		};
+		6A7A082B186F355D005E9FEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A0832186F35DA005E9FEC /* KKColorListViewController.h */,
+				6A7A0833186F35DA005E9FEC /* KKColorListViewController.m */,
+				6A7A0834186F35DA005E9FEC /* KKColorListViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6A7A082C186F355D005E9FEC /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		6A7A0837186F365B005E9FEC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A0838186F3673005E9FEC /* KKColorCell.h */,
+				6A7A0839186F3673005E9FEC /* KKColorCell.m */,
+				6A7A083B186F369E005E9FEC /* KKColorCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6A7A083D186F36F1005E9FEC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A083E186F3701005E9FEC /* KKColor.h */,
+				6A7A083F186F3701005E9FEC /* KKColor.m */,
+				6A7A0841186F394A005E9FEC /* KKColorsLoader.h */,
+				6A7A0842186F394A005E9FEC /* KKColorsLoader.m */,
+				6A7A0844186F3979005E9FEC /* KKColorsSchemeType.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6A7A0845186F3FA0005E9FEC /* Schemes */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A0846186F3FA0005E9FEC /* colors_crayola.plist */,
+				6A7A0847186F3FA0005E9FEC /* colors_pantone.plist */,
+			);
+			path = Schemes;
+			sourceTree = "<group>";
+		};
+		6A7A084E186F4050005E9FEC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A0852186F41C2005E9FEC /* UIColor */,
+				6A7A0855186F41C2005E9FEC /* UIView */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		6A7A0852186F41C2005E9FEC /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A0853186F41C2005E9FEC /* UIColor+CustomColors.h */,
+				6A7A0854186F41C2005E9FEC /* UIColor+CustomColors.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		6A7A0855186F41C2005E9FEC /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				6A7A0856186F41C2005E9FEC /* UIView+KKToolKitAdditions.h */,
+				6A7A0857186F41C2005E9FEC /* UIView+KKToolKitAdditions.m */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +346,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A7A0849186F3FA0005E9FEC /* colors_pantone.plist in Resources */,
 				6A7A080E186F343D005E9FEC /* Images.xcassets in Resources */,
 				6A7A0800186F343D005E9FEC /* InfoPlist.strings in Resources */,
+				6A7A083C186F369E005E9FEC /* KKColorCell.xib in Resources */,
+				6A7A0836186F35DA005E9FEC /* KKColorListViewController.xib in Resources */,
+				6A7A0848186F3FA0005E9FEC /* colors_crayola.plist in Resources */,
 				6A7A0809186F343D005E9FEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +373,13 @@
 			files = (
 				6A7A080C186F343D005E9FEC /* KKViewController.m in Sources */,
 				6A7A0806186F343D005E9FEC /* KKAppDelegate.m in Sources */,
+				6A7A0843186F394A005E9FEC /* KKColorsLoader.m in Sources */,
+				6A7A0835186F35DA005E9FEC /* KKColorListViewController.m in Sources */,
+				6A7A0840186F3701005E9FEC /* KKColor.m in Sources */,
+				6A7A083A186F3673005E9FEC /* KKColorCell.m in Sources */,
+				6A7A0858186F41C2005E9FEC /* UIColor+CustomColors.m in Sources */,
 				6A7A0802186F343D005E9FEC /* main.m in Sources */,
+				6A7A0859186F41C2005E9FEC /* UIView+KKToolKitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +588,7 @@
 				6A7A0826186F343D005E9FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A7A0827186F343D005E9FEC /* Build configuration list for PBXNativeTarget "KKColorListPickerExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +597,7 @@
 				6A7A0829186F343D005E9FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
