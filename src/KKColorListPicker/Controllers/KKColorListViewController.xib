@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KKColorListViewController">
             <connections>
-                <outlet property="colorsTable" destination="3Rd-di-ZhI" id="O0D-U0-P3B"/>
+                <outlet property="colorsCollection" destination="ONu-R0-xDS" id="IRi-WS-WX0"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,22 +15,29 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3Rd-di-ZhI">
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ONu-R0-xDS">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g4n-ki-ww3">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="vTg-K8-58s"/>
-                        <outlet property="delegate" destination="-1" id="fPr-aw-t6H"/>
+                        <outlet property="dataSource" destination="-1" id="qaY-3P-Uqp"/>
+                        <outlet property="delegate" destination="-1" id="Dxc-vg-siO"/>
                     </connections>
-                </tableView>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="3Rd-di-ZhI" secondAttribute="bottom" id="2eA-Vq-LL0"/>
-                <constraint firstItem="3Rd-di-ZhI" firstAttribute="top" secondItem="1" secondAttribute="top" id="VGs-sj-7Qk"/>
-                <constraint firstAttribute="trailing" secondItem="3Rd-di-ZhI" secondAttribute="trailing" id="i5h-YW-P2M"/>
-                <constraint firstItem="3Rd-di-ZhI" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="s9c-hQ-VTR"/>
+                <constraint firstItem="ONu-R0-xDS" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="CFg-SB-f7Z"/>
+                <constraint firstAttribute="bottom" secondItem="ONu-R0-xDS" secondAttribute="bottom" id="E10-9a-Atv"/>
+                <constraint firstItem="ONu-R0-xDS" firstAttribute="top" secondItem="1" secondAttribute="top" id="MTk-KO-0Xl"/>
+                <constraint firstAttribute="trailing" secondItem="ONu-R0-xDS" secondAttribute="trailing" id="ekh-pT-Bs3"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

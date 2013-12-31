@@ -2,40 +2,52 @@
 //  KKColorCell.m
 //  KKColorListPickerExample
 //
-//  Created by Kirill Kunst on 28.12.13.
+//  Created by Kirill Kunst on 29.12.13.
 //  Copyright (c) 2013 Kirill Kunst. All rights reserved.
 //
 
 #import "KKColorCell.h"
-#import "UIView+KKToolKitAdditions.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface KKColorCell()
 
 @property (weak, nonatomic) IBOutlet UIView *colorView;
-@property (weak, nonatomic) IBOutlet UILabel *labelColorName;
-
+@property (nonatomic, strong) UIColor *selectedColor;
+@property (nonatomic, assign) CGFloat selectedBorderWidth;
 @end
 
 @implementation KKColorCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithFrame:frame];
     if (self) {
+        // Initialization code
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)setSelected:(BOOL)selected
 {
-    [super setSelected:selected animated:animated];
-    [self layoutSubviews];
+    [super setSelected:selected];
+    if (selected) {
+        self.colorView.layer.borderColor = self.selectedColor.CGColor;
+        self.colorView.layer.borderWidth = self.selectedBorderWidth;
+    } else {
+        self.colorView.layer.borderWidth = 0.0f;
+    }
 }
 
 - (void)setColor:(KKColor *)color
 {
-    self.labelColorName.text = color.name;
     self.colorView.backgroundColor = [color uiColor];
+}
+
+
+- (void)setSelectedColor:(UIColor *)color selectedBorderWidth:(CGFloat)borderWidth
+{
+    self.selectedColor = color;
+    self.selectedBorderWidth = borderWidth;
 }
 
 @end

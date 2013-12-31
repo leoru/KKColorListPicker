@@ -8,8 +8,11 @@
 
 #import "KKViewController.h"
 #import "KKColorListViewController.h"
+#import "KKColor.h"
 
-@interface KKViewController ()
+@interface KKViewController () <KKColorListViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *actionButton;
 
 - (IBAction)PresentColorList:(id)sender;
 
@@ -29,7 +32,14 @@
 }
 
 - (IBAction)PresentColorList:(id)sender {
-    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
+    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypePantone];
+    controller.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
 }
+
+- (void)colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color
+{
+    [self.actionButton setTitleColor:[color uiColor] forState:UIControlStateNormal];
+}
+
 @end
