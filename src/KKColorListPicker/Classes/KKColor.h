@@ -10,11 +10,15 @@
 
 @interface KKColor : NSObject
 
+// color name
 @property (nonatomic, strong) NSString *name;
+
+// color hex
 @property (nonatomic, strong) NSString *hash;
 
 - (instancetype)initWithName:(NSString *)newName hash:(NSString *)newHash;
 
+// to UIColor
 - (UIColor *)uiColor;
 
 @end

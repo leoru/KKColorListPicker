@@ -23,6 +23,7 @@
 - (id)initWithSchemeType:(KKColorsSchemeType)schemeType;
 
 @property (nonatomic, weak) id<KKColorListViewControllerDelegate> delegate;
+
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) UIColor *selectedCellBorderColor;
 @property (nonatomic, assign) CGFloat selectedCellBorderWidth;
