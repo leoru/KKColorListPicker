@@ -5,8 +5,8 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/leoru/KKColorListPicker"
   s.license      = 'MIT'
   s.author       = { "leoru" => "kirillkunst@gmail.com" }
-  s.source       = { :git => "https://github.com/leoru/KKColorListPicker.git", :tag => "0.1" }
-  s.source_files  = 'src/KKColorListPicker/*'
   s.requires_arc = true
   s.ios.deployment_target = '7.0'
+  s.source       = { :git => "https://github.com/leoru/KKColorListPicker.git", :tag => "0.1" }
+  s.source_files  = 'src/KKColorPicker'
 end
