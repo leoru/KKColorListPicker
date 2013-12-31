@@ -7,8 +7,7 @@
 //
 
 #import "KKViewController.h"
-#import "KKColorListViewController.h"
-#import "KKColor.h"
+#import "KKColorListPicker.h"
 
 @interface KKViewController () <KKColorListViewControllerDelegate>
 
@@ -32,7 +31,7 @@
 }
 
 - (IBAction)PresentColorList:(id)sender {
-    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypePantone];
+    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
     controller.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
 }
