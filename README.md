@@ -6,12 +6,19 @@ Color collection picker for iOS > 7.0 with Crayola and Pantone colors.
 ## Screenshot
 <img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/screenshot.png">
 
+## Install
+1. Over cocoapods
+
+```objc
+pod install 'KKColorListPicker'
+```
+2. You can drag the src/KKColorListPicker folder to your project. This library must be ARC enabled.
+
 ## Use
 At first
 ```objc
 #import "KKColorListPicker.h"
 ```
-
 Then in yours controller for example:
 ```objc
 - (IBAction)PresentColorList:(id)sender {
