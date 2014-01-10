@@ -14,12 +14,14 @@
 #import "UIColor+CustomColors.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface KKColorListViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface KKColorListViewController () <UICollectionViewDelegate, UICollectionViewDataSource, KKColorsHeaderViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *colorsCollection;
+@property (nonatomic, strong) UICollectionView *colorsCollection;
 
 @property (nonatomic) KKColorsSchemeType currentScheme;
 @property (nonatomic, strong) NSArray *colors;
+
+- (void)actionClose:(id)sender;
 
 @end
 
@@ -36,7 +38,7 @@
 
 - (id)initWithSchemeType:(KKColorsSchemeType)schemeType
 {
-    self = [self initWithNibName:@"KKColorListViewController" bundle:[NSBundle mainBundle]];
+    self = [self init];
     if (self) {
         self.currentScheme = schemeType;
     }
@@ -56,14 +58,44 @@
 
 - (void)initUI
 {
-    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"KKColorCell"];
-    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorsHeaderView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"KKColorsHeaderView"];
+    [self createCollectionView];
+    
+    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorCell" bundle:nil] forCellWithReuseIdentifier:@"KKColorCell"];
+    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorsHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"KKColorsHeaderView"];
     self.view.backgroundColor = self.backgroundColor;
+    
+    if (self.navigationController) {
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [self navBarTitleColor]}];
+        [self.navigationItem setTitle:[self headerTitle]];
+//        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel:)];
+//        [button setTintColor:[UIColor whiteColor]];
+//        [self.navigationItem setLeftBarButtonItem:button];
+    }
     
     [KKColorsLoader loadColorsForType:self.currentScheme completion:^(NSArray *colors) {
         self.colors = colors;
         [self.colorsCollection reloadData];
     }];
+}
+
+- (void)createCollectionView
+{
+    UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [aFlowLayout setItemSize:CGSizeMake(36, 36)];
+    [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    if (!self.navigationController) {
+        [aFlowLayout setHeaderReferenceSize:CGSizeMake(300, 50)];
+    }
+    self.colorsCollection = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:aFlowLayout];
+    self.colorsCollection.delegate = self;
+    self.colorsCollection.dataSource = self;
+    
+    [self.view addSubview:self.colorsCollection];
+}
+
+- (void)actionCancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -87,6 +119,21 @@
     return cell;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    if (kind == UICollectionElementKindSectionHeader) {
+        KKColorsHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"KKColorsHeaderView" forIndexPath:indexPath];
+        headerView.titleLabel.text = [self headerTitle];
+        headerView.titleLabel.textColor = [self headerTitleTextColor];
+        headerView.closeButton.titleLabel.textColor = [self headerTitleTextColor];
+        [headerView.closeButton setTitleColor:[self headerTitleTextColor] forState:UIControlStateNormal];
+        headerView.delegate = self;
+        reusableview = headerView;
+    }
+    return reusableview;
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(36, 36);
@@ -98,16 +145,7 @@
     return UIEdgeInsetsMake(2, 2, 2, 2);
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *reusableview = nil;
-    if (kind == UICollectionElementKindSectionHeader) {
-        KKColorsHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"KKColorsHeaderView" forIndexPath:indexPath];
-        headerView.titleLabel.text = [self headerTitle];
-        reusableview = headerView;
-    }
-    return reusableview;
-}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -151,12 +189,33 @@
     return _backgroundColor;
 }
 
+- (UIColor *)navBarTitleColor
+{
+    if (!_navBarTitleColor) {
+        _navBarTitleColor = [UIColor blackColor];
+    }
+    return _navBarTitleColor;
+}
+
+- (UIColor *)headerTitleTextColor
+{
+    if (!_headerTitleTextColor) {
+        _headerTitleTextColor = [UIColor whiteColor];
+    }
+    return _headerTitleTextColor;
+}
+
 - (NSArray *)colors
 {
     if (!_colors) {
         _colors = [NSArray array];
     }
     return _colors;
+}
+
+- (void)didClickCloseButton:(KKColorsHeaderView *)view
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

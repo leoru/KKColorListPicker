@@ -25,8 +25,10 @@
 @property (nonatomic, weak) id<KKColorListViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) NSString *headerTitle;
+@property (nonatomic, strong) UIColor *headerTitleTextColor;
 @property (nonatomic, strong) UIColor *selectedCellBorderColor;
 @property (nonatomic, assign) CGFloat selectedCellBorderWidth;
 @property (nonatomic, strong) UIColor *backgroundColor;
+@property (nonatomic, strong) UIColor *navBarTitleColor;
 
 @end

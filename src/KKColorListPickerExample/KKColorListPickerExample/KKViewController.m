@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
 
 - (IBAction)PresentColorList:(id)sender;
+- (IBAction)presentInNavController:(id)sender;
 
 @end
 
@@ -34,6 +35,14 @@
     KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
     controller.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)presentInNavController:(id)sender {
+    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
+    controller.delegate = self;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:navController animated:YES completion:nil];
+    
 }
 
 - (void)colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color

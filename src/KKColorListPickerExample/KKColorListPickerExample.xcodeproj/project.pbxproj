@@ -24,7 +24,6 @@
 		6A7A081F186F343D005E9FEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A081D186F343D005E9FEC /* InfoPlist.strings */; };
 		6A7A0821186F343D005E9FEC /* KKColorListPickerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0820186F343D005E9FEC /* KKColorListPickerExampleTests.m */; };
 		6A7A0835186F35DA005E9FEC /* KKColorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0833186F35DA005E9FEC /* KKColorListViewController.m */; };
-		6A7A0836186F35DA005E9FEC /* KKColorListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A0834186F35DA005E9FEC /* KKColorListViewController.xib */; };
 		6A7A0840186F3701005E9FEC /* KKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A083F186F3701005E9FEC /* KKColor.m */; };
 		6A7A0843186F394A005E9FEC /* KKColorsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A0842186F394A005E9FEC /* KKColorsLoader.m */; };
 		6A7A0848186F3FA0005E9FEC /* colors_crayola.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A7A0846186F3FA0005E9FEC /* colors_crayola.plist */; };
@@ -71,7 +70,6 @@
 		6A7A0820186F343D005E9FEC /* KKColorListPickerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKColorListPickerExampleTests.m; sourceTree = "<group>"; };
 		6A7A0832186F35DA005E9FEC /* KKColorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColorListViewController.h; sourceTree = "<group>"; };
 		6A7A0833186F35DA005E9FEC /* KKColorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColorListViewController.m; sourceTree = "<group>"; };
-		6A7A0834186F35DA005E9FEC /* KKColorListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKColorListViewController.xib; sourceTree = "<group>"; };
 		6A7A083E186F3701005E9FEC /* KKColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColor.h; sourceTree = "<group>"; };
 		6A7A083F186F3701005E9FEC /* KKColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColor.m; sourceTree = "<group>"; };
 		6A7A0841186F394A005E9FEC /* KKColorsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColorsLoader.h; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			children = (
 				6A7A0832186F35DA005E9FEC /* KKColorListViewController.h */,
 				6A7A0833186F35DA005E9FEC /* KKColorListViewController.m */,
-				6A7A0834186F35DA005E9FEC /* KKColorListViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				6A7A080E186F343D005E9FEC /* Images.xcassets in Resources */,
 				6A2669E51872CEFB00E05591 /* KKColorsHeaderView.xib in Resources */,
 				6A7A0800186F343D005E9FEC /* InfoPlist.strings in Resources */,
-				6A7A0836186F35DA005E9FEC /* KKColorListViewController.xib in Resources */,
 				6A7A0848186F3FA0005E9FEC /* colors_crayola.plist in Resources */,
 				6A7A0809186F343D005E9FEC /* Main.storyboard in Resources */,
 			);

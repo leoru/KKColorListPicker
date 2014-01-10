@@ -8,6 +8,10 @@
 
 #import "KKColorsHeaderView.h"
 
+@interface KKColorsHeaderView()
+
+@end
+
 @implementation KKColorsHeaderView
 
 - (id)initWithFrame:(CGRect)frame
@@ -19,5 +23,12 @@
     return self;
 }
 
+
+- (IBAction)actionClose:(UIButton *)sender
+{
+    if (self.delegate) {
+        [self.delegate didClickCloseButton:self];
+    }
+}
 
 @end
