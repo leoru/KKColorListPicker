@@ -5,7 +5,7 @@ Color collection picker for iOS > 7.0 with Crayola and Pantone colors.
 
 ## Screenshots
 <img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/1.png">
-<img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/1.png">
+<img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/2.png">
 
 ## Install
 1. Over cocoapods
