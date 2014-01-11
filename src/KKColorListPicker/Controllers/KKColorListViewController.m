@@ -67,9 +67,9 @@
     if (self.navigationController) {
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [self navBarTitleColor]}];
         [self.navigationItem setTitle:[self headerTitle]];
-//        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel:)];
-//        [button setTintColor:[UIColor whiteColor]];
-//        [self.navigationItem setLeftBarButtonItem:button];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel:)];
+        [button setTintColor:[UIColor whiteColor]];
+        [self.navigationItem setLeftBarButtonItem:button];
     }
     
     [KKColorsLoader loadColorsForType:self.currentScheme completion:^(NSArray *colors) {
