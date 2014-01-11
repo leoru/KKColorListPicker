@@ -3,8 +3,9 @@ KKColorListPicker
 
 Color collection picker for iOS > 7.0 with Crayola and Pantone colors.
 
-## Screenshot
-<img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/screenshot.png">
+## Screenshots
+<img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/1.png">
+<img src="https://raw.github.com/leoru/KKColorListPicker/master/screenshots/1.png">
 
 ## Install
 1. Over cocoapods
@@ -25,6 +26,16 @@ Then in yours controller for example:
     KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypePantone];
     controller.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
+}
+```
+Or you can user KKColorListViewController as root in UINavigationController:
+```objc
+- (IBAction)presentInNavController:(id)sender {
+    KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
+    controller.delegate = self;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:navController animated:YES completion:nil];
+    
 }
 ```
 
