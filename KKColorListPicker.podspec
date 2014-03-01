@@ -8,5 +8,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.ios.deployment_target = '7.0'
   s.source       = { :git => "https://github.com/leoru/KKColorListPicker.git", :tag => "v0.2.2" }
-  s.source_files = 'src/KKColorListPicker/**/*.{h,m,xib,plist}'
+  s.source_files = 'src/KKColorListPicker/**/*.{h,m,plist}'
+  s.resources    = 'src/KKColorListPicker/**/*.{xib}'
 end
