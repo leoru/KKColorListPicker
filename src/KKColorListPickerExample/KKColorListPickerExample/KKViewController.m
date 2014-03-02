@@ -12,6 +12,7 @@
 @interface KKViewController () <KKColorListViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
+@property (strong, nonatomic) IBOutlet UIView *colorView;
 
 - (IBAction)PresentColorList:(id)sender;
 - (IBAction)presentInNavController:(id)sender;
@@ -31,13 +32,15 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)PresentColorList:(id)sender {
+- (IBAction)PresentColorList:(id)sender
+{
     KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
     controller.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
 }
 
-- (IBAction)presentInNavController:(id)sender {
+- (IBAction)presentInNavController:(id)sender
+{
     KKColorListViewController *controller = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
     controller.delegate = self;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -47,7 +50,13 @@
 
 - (void)colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color
 {
-    [self.actionButton setTitleColor:[color uiColor] forState:UIControlStateNormal];
+    self.colorView.backgroundColor = [color uiColor];
+    self.colorView.hidden = NO;
+}
+
+- (void)colorListPickerDidComplete:(KKColorListViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

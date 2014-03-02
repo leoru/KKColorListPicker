@@ -15,6 +15,7 @@
 @protocol KKColorListViewControllerDelegate <NSObject>
 
 - (void)colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color;
+- (void)colorListPickerDidComplete:(KKColorListViewController *)controller;
 
 @end
 

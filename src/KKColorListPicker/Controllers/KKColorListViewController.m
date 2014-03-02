@@ -67,7 +67,7 @@
     if (self.navigationController) {
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [self navBarTitleColor]}];
         [self.navigationItem setTitle:[self headerTitle]];
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel:)];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel)];
         [button setTintColor:[UIColor whiteColor]];
         [self.navigationItem setLeftBarButtonItem:button];
     }
@@ -93,9 +93,11 @@
     [self.view addSubview:self.colorsCollection];
 }
 
-- (void)actionCancel:(id)sender
+- (void)actionCancel
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorListPickerDidComplete:)]) {
+        [self.delegate colorListPickerDidComplete:self];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -215,7 +217,7 @@
 
 - (void)didClickCloseButton:(KKColorsHeaderView *)view
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self actionCancel];
 }
 
 @end
