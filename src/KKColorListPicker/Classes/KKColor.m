@@ -11,19 +11,19 @@
 
 @implementation KKColor
 
-- (instancetype)initWithName:(NSString *)newName hash:(NSString *)newHash
+- (instancetype)initWithName:(NSString *)newName colorHash:(NSString *)colorHash
 {
     self = [self init];
     if (self) {
         self.name = newName;
-        self.hash = newHash;
+        self.colorHash = colorHash;
     }
     return self;
 }
 
 - (UIColor *)uiColor
 {
-    return [UIColor colorFromHexString:self.hash];
+    return [UIColor colorFromHexString:self.colorHash];
 }
 
 @end
