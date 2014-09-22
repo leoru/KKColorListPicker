@@ -40,7 +40,7 @@
     for (NSDictionary *colorDict in colorsArray) {
         NSString *colorName = colorDict[@"name"];
         NSString *colorHash = colorDict[@"hash"];
-        KKColor *color = [[KKColor alloc] initWithName:colorName hash:colorHash];
+        KKColor *color = [[KKColor alloc] initWithName:colorName colorHash:colorHash];
         [colors addObject:color];
     }
     
