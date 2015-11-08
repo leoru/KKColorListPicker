@@ -59,9 +59,10 @@
 - (void)initUI
 {
     [self createCollectionView];
+    NSBundle *podbundle = [NSBundle bundleForClass:[self class]];
     
-    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorCell" bundle:nil] forCellWithReuseIdentifier:@"KKColorCell"];
-    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorsHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"KKColorsHeaderView"];
+    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorCell" bundle:podbundle] forCellWithReuseIdentifier:@"KKColorCell"];
+    [self.colorsCollection registerNib:[UINib nibWithNibName:@"KKColorsHeaderView" bundle:podbundle] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"KKColorsHeaderView"];
     self.view.backgroundColor = self.backgroundColor;
     
     if (self.navigationController) {
