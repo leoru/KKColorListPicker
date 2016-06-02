@@ -25,6 +25,7 @@
 
 + (NSArray *)colorsArrayForColorsSchemeType:(KKColorsSchemeType)schemeType
 {
+    NSBundle *podbundle = [NSBundle bundleForClass:[self class]];
     NSString *filename;
     if (schemeType == KKColorsSchemeTypeCrayola) {
         filename = @"colors_crayola";
@@ -32,7 +33,7 @@
         filename = @"colors_pantone";
     }
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@"plist"];
+    NSString *path = [podbundle pathForResource:filename ofType:@"plist"];
     NSDictionary *root = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSArray *colorsArray = root[@"colors"];
     NSMutableArray *colors = [NSMutableArray array];
@@ -40,7 +41,7 @@
     for (NSDictionary *colorDict in colorsArray) {
         NSString *colorName = colorDict[@"name"];
         NSString *colorHash = colorDict[@"hash"];
-        KKColor *color = [[KKColor alloc] initWithName:colorName colorHash:colorHash];
+        KKColor *color = [[KKColor alloc] initWithName:colorName hash:colorHash];
         [colors addObject:color];
     }
     

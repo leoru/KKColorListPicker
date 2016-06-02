@@ -14,9 +14,9 @@
 @property (nonatomic, strong) NSString *name;
 
 // color hex
-@property (nonatomic, strong) NSString *colorHash;
+@property (nonatomic, strong) NSString *hashString;
 
-- (instancetype)initWithName:(NSString *)newName colorHash:(NSString *)colorHash;
+- (instancetype)initWithName:(NSString *)newName hash:(NSString *)newHash;
 
 // to UIColor
 - (UIColor *)uiColor;
